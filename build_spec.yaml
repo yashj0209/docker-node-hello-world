@@ -1,0 +1,14 @@
+version: 0.1
+component: build
+timeoutInSeconds: 2000
+runAs: root
+shell: bash
+
+steps : 
+  - type: Command
+    name: "docker npm test"
+    timeoutInSeconds: 6000
+    command: |
+      echo "pwd"
+      docker build .
+    
