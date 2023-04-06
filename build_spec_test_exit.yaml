@@ -1,20 +1,20 @@
 version: 0.1
 component: build
-timeoutInSeconds: 200
+timeoutInSeconds: 2000
 runAs: root
 shell: bash
 
 steps : 
   - type: Command
     name: "docker npm test"
-    timeoutInSeconds: 10
+    timeoutInSeconds: 2000
     command: |
       echo "pwd test"
-      docker build .
+      abcd random command
     onFailure:
       - type: Command
         command: |
           echo "Handling Failure"
           echo "Failure successfully handled"
-        timeoutInSeconds: 100
+        timeoutInSeconds: 1000
     
