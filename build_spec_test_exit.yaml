@@ -6,15 +6,26 @@ shell: bash
 
 steps : 
   - type: Command
-    name: "docker npm test"
+    name: "echo test"
     timeoutInSeconds: 2000
     command: |
       echo "pwd test"
-      abcd random command
     onFailure:
       - type: Command
         command: |
           echo "Handling Failure"
           echo "Failure successfully handled"
+        timeoutInSeconds: 1000
+        
+  - type: Command
+    name: "docker test"
+    timeoutInSeconds: 2000
+    command: |
+      docker build .
+    onFailure:
+      - type: Command
+        command: |
+          echo "Handling Failure 2"
+          echo "Failure successfully handled 2"
         timeoutInSeconds: 1000
     
