@@ -21,7 +21,7 @@ steps :
     name: "docker test"
     timeoutInSeconds: 2000
     command: |
-      docker build .
+      acbd random command
     onFailure:
       - type: Command
         command: |
