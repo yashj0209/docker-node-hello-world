@@ -10,22 +10,12 @@ steps :
     timeoutInSeconds: 2000
     command: |
       echo "pwd test"
+      exit 1
+      echo "non-reachable"
     onFailure:
       - type: Command
         command: |
           echo "Handling Failure"
           echo "Failure successfully handled"
-        timeoutInSeconds: 1000
-        
-  - type: Command
-    name: "docker test"
-    timeoutInSeconds: 2000
-    command: |
-      acbd random command
-    onFailure:
-      - type: Command
-        command: |
-          echo "Handling Failure 2"
-          echo "Failure successfully handled 2"
         timeoutInSeconds: 1000
     
