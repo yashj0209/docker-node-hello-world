@@ -10,8 +10,7 @@ steps :
     timeoutInSeconds: 2000
     command: |
       echo "pwd test"
-      exit 1
-      echo "non-reachable"
+      docker build .
     onFailure:
       - type: Command
         command: |
