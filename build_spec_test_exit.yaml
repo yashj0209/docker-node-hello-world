@@ -7,7 +7,7 @@ shell: bash
 steps : 
   - type: Command
     name: "echo test"
-    timeoutInSeconds: 2000
+    timeoutInSeconds: 3
     command: |
       echo "pwd test"
       docker build .
@@ -16,5 +16,5 @@ steps :
         command: |
           echo "Handling Failure"
           echo "Failure successfully handled"
-        timeoutInSeconds: 1000
+        timeoutInSeconds: 5
     
